@@ -14,7 +14,7 @@ let passValue = "12345";
 
 btn.addEventListener('click', function () {
    if (userInput.value === userValue && passInput.value === passValue) {
-       don.style.display = 'block';
+       window.open('page2.html')
    }else {
        error.style.display = 'block';
    }
