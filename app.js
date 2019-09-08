@@ -4,6 +4,8 @@ let userInput = document.getElementById('user');
 let passInput = document.getElementById('pass');
 let err = document.getElementsByClassName('error');
 let don = document.getElementById('done');
+let gomb = document.getElementById('gomb');
+let doboz = document.getElementById('doboz');
 
 let userValue = "Peti";
 let passValue = "12345";
