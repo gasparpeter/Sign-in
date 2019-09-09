@@ -51,7 +51,7 @@ input {
 }
 
 #doboz {
-    display: block;
+    display: none;
     margin: auto;
     width: 400px;
     height: 350px;
@@ -79,4 +79,12 @@ input {
     height: 50px;
     top: 30%;
     left: 45%;
+}
+
+#list {
+    width: 150px;
+    position: fixed;
+    height: 800px;
+    background-color: aqua;
+    left: 0;
 }
