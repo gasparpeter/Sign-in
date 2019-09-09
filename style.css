@@ -51,7 +51,7 @@ input {
 }
 
 #doboz {
-    display: none;
+    display: block;
     margin: auto;
     width: 400px;
     height: 350px;
@@ -63,4 +63,20 @@ input {
     margin: auto;
     width: 200px;
     height: 100px;
+}
+
+#area {
+    margin: auto;
+    height: 50px;
+    position: absolute;
+    left: 42%;
+}
+
+#gomb2 {
+    margin: auto;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 30%;
+    left: 45%;
 }
