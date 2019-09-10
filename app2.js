@@ -6,6 +6,7 @@ let titleInp = document.getElementById('titleInp');
 let area = document.getElementById('area');
 let list = document.getElementById('list');
 let cancel = document.getElementById('cancel');
+let eror = document.getElementById('eror');
 
 gomb.addEventListener("click", function () {
    doboz.style.display = 'block';
@@ -23,7 +24,8 @@ cancel.addEventListener('click', function () {
    gomb2.addEventListener('click', function () {
 
        if (titleInp.value.length < 3 || mailInp.value.length < 3 || area.value.length < 3) {
-           console.log('error')
+           eror.style.display = 'block';
+
        }else {
            let title = document.createElement("li");
            title.innerText = titleInp.value;
