@@ -13,5 +13,13 @@ gomb.addEventListener("click", function () {
 
 
    gomb2.addEventListener('click', function () {
-         list.innerText = titleInp.value
+         // list.innerText = titleInp.value
+       let title = document.createElement("li");
+       title.innerText = titleInp.value;
+       list.appendChild(title)
+
+       title.addEventListener('click', function () {
+           console.log('dsa')
+       })
+
    });
