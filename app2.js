@@ -26,6 +26,7 @@ cancel.addEventListener('click', function () {
        mailInp.value = null;
        titleInp.value = null;
        area.value = null;
+       
 
        title.addEventListener('click', function () {
            console.log('dsa')
