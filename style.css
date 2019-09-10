@@ -78,13 +78,23 @@ input {
     width: 100px;
     height: 50px;
     top: 30%;
-    left: 45%;
+    left: 42%;
 }
 
 #list {
+    display: block;
     width: 150px;
     position: fixed;
     height: 800px;
     background-color: aqua;
     left: 0;
+}
+
+#cancel {
+    margin: auto;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 30%;
+    left: 49%;
 }
