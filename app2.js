@@ -18,18 +18,28 @@ cancel.addEventListener('click', function () {
 });
 
 
-   gomb2.addEventListener('click', function () {
-         // list.innerText = titleInp.value
-       let title = document.createElement("li");
-       title.innerText = titleInp.value;
-       list.appendChild(title);
-       mailInp.value = null;
-       titleInp.value = null;
-       area.value = null;
-       
 
-       title.addEventListener('click', function () {
-           console.log('dsa')
-       })
+
+   gomb2.addEventListener('click', function () {
+
+       if (titleInp.value.length < 3 || mailInp.value.length < 3 || area.value.length < 3) {
+           console.log('error')
+       }else {
+           let title = document.createElement("li");
+           title.innerText = titleInp.value;
+           list.appendChild(title);
+           mailInp.value = null;
+           titleInp.value = null;
+           area.value = null;
+           // list.innerText = titleInp.value
+
+           title.addEventListener('click', function () {
+               console.log('dsa')
+           });
+
+       }
+
+
+
 
    });

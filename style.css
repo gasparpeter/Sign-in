@@ -98,3 +98,8 @@ input {
     top: 30%;
     left: 49%;
 }
+
+li {
+    cursor: pointer;
+    font-size: 24px;
+}
