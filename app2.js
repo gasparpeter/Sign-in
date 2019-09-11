@@ -7,6 +7,7 @@ let area = document.getElementById('area');
 let list = document.getElementById('list');
 let cancel = document.getElementById('cancel');
 let eror = document.getElementById('eror');
+let infobox = document.getElementById('infobox');
 
 gomb.addEventListener("click", function () {
    doboz.style.display = 'block';
@@ -30,13 +31,21 @@ cancel.addEventListener('click', function () {
            let title = document.createElement("li");
            title.innerText = titleInp.value;
            list.appendChild(title);
-           mailInp.value = null;
-           titleInp.value = null;
-           area.value = null;
+           // mailInp.value = null;
+           // titleInp.value = null;
+           // area.value = null;
            // list.innerText = titleInp.value
 
+            let email = document.createElement("h1");
+            let textarea = document.createElement('p');
+            email.innerText = mailInp.value;
+            textarea.innerText = area.value;
+            infobox.appendChild(email);
+            infobox.appendChild(textarea);
+
+
            title.addEventListener('click', function () {
-               console.log('dsa')
+              infobox.style.display = 'block';
            });
 
        }
