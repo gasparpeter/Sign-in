@@ -8,6 +8,7 @@ let list = document.getElementById('list');
 let cancel = document.getElementById('cancel');
 let eror = document.getElementById('eror');
 let infobox = document.getElementById('infobox');
+let X = document.getElementById('X');
 
 gomb.addEventListener("click", function () {
    doboz.style.display = 'block';
@@ -55,6 +56,10 @@ cancel.addEventListener('click', function () {
                titleInp.value = null;
                area.value = null;
            });
+
+           X.addEventListener('click', function () {
+               infobox.style.display = 'none';
+           })
 
        }
 

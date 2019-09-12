@@ -113,10 +113,16 @@ li {
 }
 
 #infobox {
-    width: 600px;
-    height: 300px;
+    width: 350px;
+    height: 200px;
     display: none;
-    background-color: red;
+    background-color: #b3daff;
     position: absolute;
     left: 50%;
+}
+
+#X {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
 }
