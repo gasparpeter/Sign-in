@@ -24,6 +24,11 @@ cancel.addEventListener('click', function () {
 
    gomb2.addEventListener('click', function () {
 
+
+       if (titleInp.value.length > 3 || mailInp.value.length > 3 || area.value.length > 3) {
+           eror.style.display = 'none';
+       }
+
        if (titleInp.value.length < 3 || mailInp.value.length < 3 || area.value.length < 3) {
            eror.style.display = 'block';
 
@@ -42,10 +47,13 @@ cancel.addEventListener('click', function () {
             textarea.innerText = area.value;
             infobox.appendChild(email);
             infobox.appendChild(textarea);
-
+            infobox.style.display = 'none';
 
            title.addEventListener('click', function () {
               infobox.style.display = 'block';
+               mailInp.value = null;
+               titleInp.value = null;
+               area.value = null;
            });
 
        }
