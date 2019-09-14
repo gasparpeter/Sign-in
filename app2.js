@@ -24,9 +24,9 @@ cancel.addEventListener('click', function () {
 
 gomb2.addEventListener('click', function () {
    EMAILS.push({
-       "email": mailInp.value,
-       "title": titleInp.value,
-       "message": area.value
+       "cimzett": mailInp.value,
+       "cim": titleInp.value,
+       "uzenet": area.value
    });
 
 
@@ -35,24 +35,37 @@ gomb2.addEventListener('click', function () {
     emailTitle.innerText = titleInp.value;
 
     list.appendChild(emailTitle);
+    
+    emailTitle.addEventListener('click', function (e) {
+        const index = getChildIndex( e.target );
 
+        const email = EMAILS[ index ];
+
+        mailInp.value   = email.cimzett;
+        titleInp.value       = email.cim;
+        area.value    = email.uzenet;
+    });
+
+    resetInputs();
+
+});
+
+var getChildIndex = function(child){
+    var parent = child.parentNode;
+    var children = parent.children;
+    var i = children.length - 1;
+    for (; i >= 0; i--){
+        if (child == children[i]){
+            break;
+        }
+    }
+    return i;
+};
+
+function resetInputs() {
     mailInp.value = null;
     titleInp.value = null;
     area.value = null;
-
-    emailTitle.addEventListener('click', function () {
-        // const index = getChildIndex( e.target );
-        //
-        // const email = EMAILEK[ index ];
-        //
-        // mailInp.value   = email.cimzett;
-        // titleInp.value       = email.cim;
-        // area.value    = email.uzenet;
-    });
-});
-
-
-
-
+}
 
 
