@@ -35,6 +35,13 @@ gomb2.addEventListener('click', function () {
     emailTitle.innerText = titleInp.value;
     list.appendChild(emailTitle);
 
+    function deleteLI() {
+        emailTitle.remove();
+        deleteItem.remove();
+        editBtn.remove();
+    }
+
+
     const deleteItem = document.createElement('button');
     deleteItem.innerText = "DELETE";
     list.appendChild(deleteItem);
@@ -42,6 +49,8 @@ gomb2.addEventListener('click', function () {
     const editBtn = document.createElement('button');
     editBtn.innerText = "EDIT";
     list.appendChild(editBtn);
+
+    deleteItem.addEventListener('click', deleteLI);
 
     editBtn.addEventListener('click', function (e) {
         const index = getChildIndex( e.target );
@@ -69,9 +78,6 @@ var getChildIndex = function(child){
     return i;
 };
 
-function deleteLI() {
-    list.remove(emailTitle);
-}
 
 function resetInputs() {
     mailInp.value = null;
