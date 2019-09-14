@@ -30,10 +30,25 @@ gomb2.addEventListener('click', function () {
    });
 
 
+
     const emailTitle = document.createElement( "li" );
     emailTitle.innerText = titleInp.value;
 
     list.appendChild(emailTitle);
+
+    mailInp.value = null;
+    titleInp.value = null;
+    area.value = null;
+
+    emailTitle.addEventListener('click', function () {
+        // const index = getChildIndex( e.target );
+        //
+        // const email = EMAILEK[ index ];
+        //
+        // mailInp.value   = email.cimzett;
+        // titleInp.value       = email.cim;
+        // area.value    = email.uzenet;
+    });
 });
 
 
