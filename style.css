@@ -126,3 +126,8 @@ li {
     right: 0;
     cursor: pointer;
 }
+
+button {
+    background-color: white;
+    color: red;
+}

@@ -33,10 +33,17 @@ gomb2.addEventListener('click', function () {
 
     const emailTitle = document.createElement( "li" );
     emailTitle.innerText = titleInp.value;
-
     list.appendChild(emailTitle);
-    
-    emailTitle.addEventListener('click', function (e) {
+
+    const deleteItem = document.createElement('button');
+    deleteItem.innerText = "DELETE";
+    list.appendChild(deleteItem);
+
+    const editBtn = document.createElement('button');
+    editBtn.innerText = "EDIT";
+    list.appendChild(editBtn);
+
+    editBtn.addEventListener('click', function (e) {
         const index = getChildIndex( e.target );
 
         const email = EMAILS[ index ];
@@ -61,6 +68,10 @@ var getChildIndex = function(child){
     }
     return i;
 };
+
+function deleteLI() {
+    list.remove(emailTitle);
+}
 
 function resetInputs() {
     mailInp.value = null;
