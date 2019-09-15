@@ -11,6 +11,9 @@ let X = document.getElementById('X');
 
 let EMAILS = [];
 
+let editmode = false;
+let editIndex = null;
+
 gomb.addEventListener("click", function () {
     doboz.style.display = 'block';
     gomb.style.display = 'none';
@@ -26,6 +29,14 @@ gomb2.addEventListener('click', function () {
 
     if (titleInp.value.length < 3 || mailInp.value.length < 3 || area.value.length < 3) {
         alert('ERROR!')
+    }else  if ( editmode && editIndex !== null ) {
+
+        list.children[ editIndex ].innerText = titleInp.value;
+
+        EMAILEK[ editIndex ].cimzett = mailInp.value;
+        EMAILEK[ editIndex ].cim = titleInp.value;
+        EMAILEK[ editIndex ].uzenet = area.value;
+
     }else {
 
         EMAILS.push({
@@ -61,6 +72,10 @@ gomb2.addEventListener('click', function () {
             mailInp.value   = email.cimzett;
             titleInp.value       = email.cim;
             area.value    = email.uzenet;
+
+
+            editmode = true;
+            editIndex = index;
         });
 
         resetInputs();
