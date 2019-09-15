@@ -23,46 +23,49 @@ cancel.addEventListener('click', function () {
 
 
 gomb2.addEventListener('click', function () {
-   EMAILS.push({
-       "cimzett": mailInp.value,
-       "cim": titleInp.value,
-       "uzenet": area.value
-   });
+
+    if (titleInp.value.length < 3 || mailInp.value.length < 3 || area.value.length < 3) {
+        alert('ERROR!')
+    }else {
+
+        EMAILS.push({
+            "cimzett": mailInp.value,
+            "cim": titleInp.value,
+            "uzenet": area.value
+        });
 
 
 
-    const emailTitle = document.createElement( "li" );
-    emailTitle.innerText = titleInp.value;
-    list.appendChild(emailTitle);
+        const emailTitle = document.createElement( "li" );
+        emailTitle.innerText = titleInp.value;
+        list.appendChild(emailTitle);
 
-    function deleteLI() {
-        emailTitle.remove();
-        deleteItem.remove();
-        editBtn.remove();
+        function deleteLI() {
+            emailTitle.remove();
+            deleteItem.remove();
+            editBtn.remove();
+        }
+
+
+        const deleteItem = document.createElement('button');
+        deleteItem.innerText = "DELETE";
+        list.appendChild(deleteItem);
+
+        deleteItem.addEventListener('click', deleteLI);
+
+        emailTitle.addEventListener('click', function (e) {
+            const index = getChildIndex( e.target );
+
+            const email = EMAILS[ index ];
+
+            mailInp.value   = email.cimzett;
+            titleInp.value       = email.cim;
+            area.value    = email.uzenet;
+        });
+
+        resetInputs();
+
     }
-
-
-    const deleteItem = document.createElement('button');
-    deleteItem.innerText = "DELETE";
-    list.appendChild(deleteItem);
-
-    const editBtn = document.createElement('button');
-    editBtn.innerText = "EDIT";
-    list.appendChild(editBtn);
-
-    deleteItem.addEventListener('click', deleteLI);
-
-    editBtn.addEventListener('click', function (e) {
-        const index = getChildIndex( e.target );
-
-        const email = EMAILS[ index ];
-
-        mailInp.value   = email.cimzett;
-        titleInp.value       = email.cim;
-        area.value    = email.uzenet;
-    });
-
-    resetInputs();
 
 });
 
